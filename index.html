@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finnkino Elokuvat</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #f1c40f;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f1c40f;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    select, input {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #f1c40f;
+      border-radius: 5px;
+    }
+
+    .movie-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .movie {
+      background-color: #333;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .movie img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .movie h3 {
+      margin: 10px 0;
+      font-size: 18px;
+      color: #f1c40f;
+    }
+
+    .movie p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎥 Finnkino Elokuvat</h1>
+
+  <div class="controls">
+    <select id="theaterSelect">
+      <option value="">Valitse teatteri</option>
+    </select>
+    <input type="date" id="dateInput">
+    <input type="text" id="searchInput" placeholder="Etsi elokuvan nimellä...">
+  </div>
+
+  <div class="movie-container" id="movieContainer"></div>
+</body>
+</html>
